@@ -12,7 +12,7 @@ The code comes from the
 [u8g2](https://github.com/olikraus/u8g2) and
 [u8g2-arm-linux](https://github.com/wuhanstudio/u8g2-arm-linux)
 projects. It has been assembled into the libug2arm project by
-the [setup_src.sh](../blob/master/setup_src.sh) script.
+the [setup_src.sh](setup_src.sh) script.
 
 Build and Install
 -----------------
