@@ -6,7 +6,7 @@ AC_CONFIG_AUX_DIR([build_aux])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
 
-AM_INIT_AUTOMAKE([1.9 -W -Wall foreign subdir-objects])
+AM_INIT_AUTOMAKE([1.9 foreign subdir-objects])
 AM_PROG_AR
 
 LT_INIT

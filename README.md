@@ -5,19 +5,18 @@ libu8g2arm
 
 The libu8g2arm package provides the
 [U8g2: Library for monochrome displays](https://github.com/olikraus/u8g2)
-in a form suitable for building and installing on Linux-based OSs
-running on the Raspberry Pi.
+for building and installing on Linux-based OSs running on the Raspberry Pi.
 
 The code comes from the
 [u8g2](https://github.com/olikraus/u8g2) and
 [u8g2-arm-linux](https://github.com/wuhanstudio/u8g2-arm-linux)
-projects. It has been assembled into the libug2arm project by
+projects, and is assembled into the libug2arm project by
 the [setup_src.sh](setup_src.sh) script.
 
 Build and Install
 -----------------
 
-The build system uses the Autotools. Create the configure file
+The package is built with the Autotools. Create the configure file
 by running
 ```
 ./bootstrap
@@ -46,14 +45,32 @@ Make a *arm-unknown-linux-gnueabi* toolchain with
    make install-strip
 ```
 
-Package Maintenance
--------------------
+Package Regeneration
+--------------------
 
-Notes on preparing the package. These are not needed for normal use.
+Notes on regenerating the package. These are not needed for normal use.
 
 To update the code to include recent changes to u8g2 and u8g2-arm-linux,
 clone these two projects into directories parallel to the libug2arm
-directory, then run setup_src.sh from the libug2arm top level
+directory, then run
+[setup_src.sh](setup_src.sh)
+from the libug2arm top level
 directory. **WARNING**: this will delete the src directory before rebuilding
 it, and any local changes under the src directory will be lost.
 
+Credits
+-------
+
+The [U8g2: Library for monochrome displays](https://github.com/olikraus/u8g2)
+is developed by [Olikraus](https://github.com/olikraus)
+
+The [U8g2 Arm Linux Port](https://github.com/wuhanstudio/u8g2-arm-linux)
+is developed by
+*   Author: Wu Han
+*   Homepage: http://wuhanstudio.cc
+*   Email: wuhanstudio@hust.edu.cn
+
+Contact
+-------
+
+[Adrian Rossiter](https://github.com/antiprism)

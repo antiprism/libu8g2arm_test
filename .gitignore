@@ -12,6 +12,7 @@ configure
 depcomp
 libtool
 stamp-h1
+.dirstamp
 *.o
 *.lo
 *.a
@@ -20,3 +21,4 @@ stamp-h1
 *.libs
 *~
 *.swp
+src/setup
