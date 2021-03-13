@@ -2,14 +2,14 @@
 # U8g2 codebuild_cpper
 # 
 
-CFLAGS = -g -Wall 
+CPPFLAGS = -g -Wall 
 #CFLAGS = -O4 -Wall
 
 SRC = codebuild_cpp.c
 
 OBJ = $(SRC:.c=.o)
 
-codebuild_cpp: $(SRC) codebuild.c
+codebuild_cpp: $(SRC) codebuild_cpp.c
 	$(CC) -Wall -g $(LDFLAGS) $(SRC) -o codebuild_cpp
 
 clean:	

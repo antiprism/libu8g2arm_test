@@ -58,6 +58,10 @@ from the libug2arm top level
 directory. **WARNING**: this will delete the src directory before rebuilding
 it, and any local changes under the src directory will be lost.
 
+Some replacement files are included in setup/files. New functions added
+to the original files will not be included unless these files are manually
+updated.
+
 Credits
 -------
 

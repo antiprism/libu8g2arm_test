@@ -41,6 +41,7 @@ libu8g2armcsrc_la_SOURCES = \
 	csrc/u8x8_8x8.c \
 	csrc/u8x8_byte.c \
 	csrc/u8x8_cad.c \
+	csrc/u8x8_capture.c \
 	csrc/u8x8_d_a2printer.c \
 	csrc/u8x8_debounce.c \
 	csrc/u8x8_d_il3820_296x128.c \
@@ -55,6 +56,7 @@ libu8g2armcsrc_la_SOURCES = \
 	csrc/u8x8_d_pcd8544_84x48.c \
 	csrc/u8x8_d_pcf8812.c \
 	csrc/u8x8_d_pcf8814_hx1230.c \
+	csrc/u8x8_d_s1d15e06.c \
 	csrc/u8x8_d_sbn1661.c \
 	csrc/u8x8_d_sed1330.c \
 	csrc/u8x8_d_sh1106_64x32.c \
@@ -65,9 +67,11 @@ libu8g2armcsrc_la_SOURCES = \
 	csrc/u8x8_d_ssd1305.c \
 	csrc/u8x8_d_ssd1306_128x32.c \
 	csrc/u8x8_d_ssd1306_128x64_noname.c \
+	csrc/u8x8_d_ssd1306_2040x16.c \
 	csrc/u8x8_d_ssd1306_48x64.c \
 	csrc/u8x8_d_ssd1306_64x32.c \
 	csrc/u8x8_d_ssd1306_64x48.c \
+	csrc/u8x8_d_ssd1306_72x40.c \
 	csrc/u8x8_d_ssd1306_96x16.c \
 	csrc/u8x8_d_ssd1309.c \
 	csrc/u8x8_d_ssd1316.c \
@@ -86,8 +90,10 @@ libu8g2armcsrc_la_SOURCES = \
 	csrc/u8x8_d_st75320.c \
 	csrc/u8x8_d_st7565.c \
 	csrc/u8x8_d_st7567.c \
+	csrc/u8x8_d_st7571.c \
 	csrc/u8x8_d_st7586s_erc240160.c \
 	csrc/u8x8_d_st7586s_s028hn118a.c \
+	csrc/u8x8_d_st7586s_ymc240160.c \
 	csrc/u8x8_d_st7588.c \
 	csrc/u8x8_d_st7920.c \
 	csrc/u8x8_d_stdio.c \
@@ -112,6 +118,7 @@ libu8g2armcsrc_la_SOURCES = \
 	csrc/u8x8_u8toa.c \
 	csrc/u8g2.h \
 	csrc/u8x8.h \
+	cppsrc/U8g2lib.cpp \
 	cppsrc/U8x8lib.cpp \
 	cppsrc/U8g2lib.h \
 	cppsrc/U8x8lib.h \

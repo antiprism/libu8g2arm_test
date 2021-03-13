@@ -19,6 +19,7 @@ cp -a ${PORT_SRC_DIR}/drivers ${SRC_DIR}
 cp -a ${U8G2_SRC_DIR}/csrc ${SRC_DIR}
 cp -a ${U8G2_SRC_DIR}/cppsrc ${SRC_DIR}
 cp -a ${SETUP_DIR}/files/U8x8lib.cpp ${SRC_DIR}/cppsrc  # overwrite
+cp -a ${SETUP_DIR}/files/U8g2lib.cpp ${SRC_DIR}/cppsrc  # overwrite
 cp -a ${SETUP_DIR}/codebuild ${SRC_DIR}/setup
 cp -a ${U8G2_SRC_DIR}/tools/codebuild/codebuild.c ${SRC_DIR}/setup/codebuild
 
@@ -60,6 +61,7 @@ sed -i 's!u8x8_gpio_and_delay_arduino!u8x8_arm_linux_gpio_and_delay!' ${SRC_DIR}
 
 sed -i 's!#include <Arduino.h>!!' ${SRC_DIR}/cppsrc/U8g2lib.h
 sed -i 's!#include <Print.h>!!' ${SRC_DIR}/cppsrc/U8g2lib.h
+sed -i 's!void writeBuffer!//void writeBuffer!' ${SRC_DIR}/cppsrc/U8g2lib.h
 sed -i 's!#include "u8g2.h"!#include "../csrc/u8g2.h"!' ${SRC_DIR}/cppsrc/U8g2lib.h
 sed -i 's! : public Print!!' ${SRC_DIR}/cppsrc/U8g2lib.h
 
