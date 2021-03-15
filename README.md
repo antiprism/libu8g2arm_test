@@ -50,17 +50,21 @@ Package Regeneration
 
 Notes on regenerating the package. These are not needed for normal use.
 
-To update the code to include recent changes to u8g2 and u8g2-arm-linux,
-clone these two projects into directories parallel to the libug2arm
-directory, then run
+To update the code to include recent changes to U8g2, clone the U8g2 
+repository into a directory parallel to the libug2arm directory, then run
 [setup_src.sh](setup_src.sh)
-from the libug2arm top level
-directory. **WARNING**: this will delete the src directory before rebuilding
+from the libug2arm top level directory.
+**WARNING**: this will delete the src directory before recreating
 it, and any local changes under the src directory will be lost.
 
 Some replacement files are included in setup/files. New functions added
 to the original files will not be included unless these files are manually
 updated.
+
+Contact
+-------
+
+[Adrian Rossiter](https://github.com/antiprism)
 
 Credits
 -------
@@ -74,7 +78,4 @@ is developed by
 *   Homepage: http://wuhanstudio.cc
 *   Email: wuhanstudio@hust.edu.cn
 
-Contact
--------
 
-[Adrian Rossiter](https://github.com/antiprism)

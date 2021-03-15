@@ -21,29 +21,23 @@
   IN THE SOFTWARE.
 */
 
-#ifndef U8G2LIB_H
-#define U8G2LIB_H
+#ifndef SPI_H
+#define SPI_H
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include <stdio.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <sys/ioctl.h>
+#include <linux/spi/spidev.h>
 
+#define ARRAY_SIZE(a) (sizeof(a) / sizeof((a)[0]))
 
-#include "../csrc/u8g2.h"
-#include "gpio.h"
-#include "i2c.h"
-#include "spi.h"
+void pabort(const char *s);
 
-int u8g2arm_arm_init_hw_spi(u8x8_t *u8x8, int bus_number, int cs_number);
-int u8g2arm_arm_init_hw_i2c(u8x8_t *u8x8, int bus_number);
-void u8g2arm_arm_free(u8x8_t *u8x8);
-
-uint8_t u8x8_arm_linux_gpio_and_delay(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *arg_ptr);
-uint8_t u8x8_byte_arm_linux_hw_i2c(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *arg_ptr);
-uint8_t u8x8_byte_arm_linux_hw_spi(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *arg_ptr);
-
-#ifdef __cplusplus
-}
-#endif
+int openSPIDevice(const char* device, uint8_t mode, uint8_t bits, uint32_t speed);
+int SPITransfer(int fd, struct spi_ioc_transfer* tr);
+void closeSPIDevice(int fd);
 
 #endif

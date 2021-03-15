@@ -1,7 +1,7 @@
 
 AC_PREREQ([2.69])
 AC_INIT([libu8g2arm], [0.01], [adrian@antiprism.com])
-AC_CONFIG_SRCDIR([src/drivers/spi.c])
+AC_CONFIG_SRCDIR([src/port/spi.c])
 AC_CONFIG_AUX_DIR([build_aux])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])

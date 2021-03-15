@@ -5,14 +5,14 @@ libu8g2arm_la_LIBADD = libu8g2armport.la libu8g2armcsrc.la
 noinst_LTLIBRARIES = libu8g2armport.la libu8g2armcsrc.la
 
 libu8g2armport_la_SOURCES = \
+	port/gpio.c \
+	port/i2c.c \
+	port/spi.c \
 	port/u8g2arm.c \
+	port/gpio.h \
+	port/i2c.h \
+	port/spi.h \
 	port/u8g2arm.h \
-	drivers/gpio.c \
-	drivers/i2c.c \
-	drivers/spi.c \
-	drivers/gpio.h \
-	drivers/i2c.h \
-	drivers/spi.h \
 	# terminate list
 
 libu8g2armcsrc_la_SOURCES = \
@@ -125,10 +125,10 @@ libu8g2armcsrc_la_SOURCES = \
 	# terminate list
 
 pkginclude_HEADERS = \
-	include/u8g2arm.h \
 	include/gpio.h \
 	include/i2c.h \
 	include/spi.h \
+	include/u8g2arm.h \
 	include/u8g2.h \
 	include/u8x8.h \
 	include/U8g2lib.h \
