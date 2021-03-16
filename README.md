@@ -5,13 +5,10 @@ libu8g2arm
 
 The libu8g2arm package provides the
 [U8g2: Library for monochrome displays](https://github.com/olikraus/u8g2)
-for building and installing on Linux-based OSs running on the Raspberry Pi.
-
-The code comes from the
-[u8g2](https://github.com/olikraus/u8g2) and
+for building and installing on Linux-based OSs running on the Raspberry Pi,
+using the
 [u8g2-arm-linux](https://github.com/wuhanstudio/u8g2-arm-linux)
-projects, and is assembled into the libug2arm project by
-the [setup_src.sh](setup_src.sh) script.
+port.
 
 Build and Install
 -----------------
@@ -48,18 +45,23 @@ Make a *arm-unknown-linux-gnueabi* toolchain with
 Package Regeneration
 --------------------
 
-Notes on regenerating the package. These are not needed for normal use.
+The package includes all the components used to generate it, which can
+used to synchronise with the latest U8g2 code.
 
-To update the code to include recent changes to U8g2, clone the U8g2 
-repository into a directory parallel to the libug2arm directory, then run
+The regeneration is not required for normal use, and may need to be
+updated to account for changes to U8g2. For example, the regeneration
+script may fail, or some replacement files in setup/files may need to
+be updated manually if the originals change.
+
+**WARNING**: regenerating the package will delete the src directory before
+recreating it, and any local changes under the src directory will be lost.
+
+To regenerate the package, clone
+[U8g2](https://github.com/olikraus/u8g2)
+into a directory parallel to the libug2arm directory, then run
 [setup_src.sh](setup_src.sh)
 from the libug2arm top level directory.
-**WARNING**: this will delete the src directory before recreating
-it, and any local changes under the src directory will be lost.
 
-Some replacement files are included in setup/files. New functions added
-to the original files will not be included unless these files are manually
-updated.
 
 Contact
 -------
@@ -77,5 +79,4 @@ is developed by
 *   Author: Wu Han
 *   Homepage: http://wuhanstudio.cc
 *   Email: wuhanstudio@hust.edu.cn
-
 
