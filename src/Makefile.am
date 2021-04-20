@@ -77,6 +77,7 @@ libu8g2armcsrc_la_SOURCES = \
 	csrc/u8x8_d_ssd1316.c \
 	csrc/u8x8_d_ssd1317.c \
 	csrc/u8x8_d_ssd1318.c \
+	csrc/u8x8_d_ssd1320.c \
 	csrc/u8x8_d_ssd1322.c \
 	csrc/u8x8_d_ssd1325.c \
 	csrc/u8x8_d_ssd1326.c \

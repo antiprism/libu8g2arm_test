@@ -21,6 +21,8 @@ cp -a ${SETUP_DIR}/port ${SRC_DIR}
 cp -a ${SETUP_DIR}/codebuild ${SRC_DIR}/setup
 cp -a ${U8G2_SRC_DIR}/tools/codebuild/codebuild.c ${SRC_DIR}/setup/codebuild
 
+# ...define U8G2_16BIT
+sed -i 's!//#define U8G2_16BIT!#define U8G2_16BIT     // libug8arm: was commented out!' ${SRC_DIR}/csrc/u8g2.h
 # ...ensure PIN code is included
 sed -i 's!#ifdef ARDUINO!#if 1     // libug8arm: was #ifdef ARDUINO!' ${SRC_DIR}/csrc/u8x8.h
 # ...ensure USER_PTR code is enabled
