@@ -56,6 +56,7 @@ libu8g2armcsrc_la_SOURCES = \
 	csrc/u8x8_d_pcd8544_84x48.c \
 	csrc/u8x8_d_pcf8812.c \
 	csrc/u8x8_d_pcf8814_hx1230.c \
+	csrc/u8x8_d_s1d15721.c \
 	csrc/u8x8_d_s1d15e06.c \
 	csrc/u8x8_d_sbn1661.c \
 	csrc/u8x8_d_sed1330.c \
