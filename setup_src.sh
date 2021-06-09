@@ -79,13 +79,15 @@ sed -i 's!u8x8_gpio_and_delay_arduino!u8x8_arm_linux_gpio_and_delay!' ${SRC_DIR}
 sed -i 's!int main!int main_orig!' ${SRC_DIR}/setup/codebuild/codebuild.c
 (cd src/setup/codebuild; make -f makefile; ./codebuild_cpp)
 
+U8G2_VER=$(sh ../u8g2/tools/release/print_release.sh)
+
 # generate Makefile.am 
 # TAB="$(printf '\t')"
 cat << END >> ${SRC_DIR}/Makefile.am
 lib_LTLIBRARIES = libu8g2arm.la
 libu8g2arm_la_SOURCES =
 libu8g2arm_la_LIBADD = libu8g2armport.la libu8g2armcsrc.la
-libu8g2arm_la_LDFLAGS = -release \$(U8G2_VER)
+libu8g2arm_la_LDFLAGS = -release ${U8G2_VER}
 noinst_LTLIBRARIES = libu8g2armport.la libu8g2armcsrc.la
 
 libu8g2armport_la_SOURCES = \\
@@ -124,7 +126,7 @@ echo -e "\t# terminate list" >> ${SRC_DIR}/Makefile.am
 cat << END >> ${SRC_DIR}/Makefile.am
 
 lib_LTLIBRARIES += libu8g2fonts_gplcopyleft.la
-libu8g2fonts_gplcopyleft_la_LDFLAGS = -release \$(U8G2_VER)
+libu8g2fonts_gplcopyleft_la_LDFLAGS = -release ${U8G2_VER}
 libu8g2fonts_gplcopyleft_la_SOURCES = \\
 END
 
@@ -137,7 +139,7 @@ echo -e "\t# terminate list" >> ${SRC_DIR}/Makefile.am
 cat << END >> ${SRC_DIR}/Makefile.am
 
 lib_LTLIBRARIES += libu8g2fonts_noncommercial.la
-libu8g2fonts_noncommercial_la_LDFLAGS = -release \$(U8G2_VER)
+libu8g2fonts_noncommercial_la_LDFLAGS = -release ${U8G2_VER}
 libu8g2fonts_noncommercial_la_SOURCES = \\
 END
 
