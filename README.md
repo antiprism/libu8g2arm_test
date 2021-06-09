@@ -42,6 +42,21 @@ Make a *arm-unknown-linux-gnueabi* toolchain with
    make install-strip
 ```
 
+Using the library
+---------------------------
+
+To use the U8G2 library (contains permissive license fonts only)
+include `libu8g2arm/u8g2.h`, and link to `libu8g2arm` (licence:
+COPYING_permissive). To also use GPL and other copyleft fonts, additionally
+include `libu8g2arm/u8g2_fonts_gplcopyleft.h` and link to
+`libu8g2armfonts_gplcopyleft` (licence: COPYING_permissive and
+COPYING_gplcopyleft), and note that this library is covered by
+the GPL and not the LGPL. To also use noncommercial fonts, additionally
+include `libu8g2arm/u8g2_fonts_noncommercial.h` and link to
+`libu8g2armfonts_noncommercial` (licence COPYING_permissive and
+COPYING_noncommercial).
+
+
 Package Regeneration
 --------------------
 

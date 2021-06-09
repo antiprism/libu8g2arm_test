@@ -1,10 +1,11 @@
 #include "codebuild.c"
 
-FILE *init_cpp_fp;
+FILE *init_c_fp;
+FILE *init_h_fp;
 
 void do_print_init(int controller_idx, int display_idx, const char *postfix, int interface_idx)
 {
-  FILE *fp = init_cpp_fp;
+  FILE *fp = init_c_fp;
 
   if(*postfix != 'f')
     return;
@@ -82,24 +83,24 @@ void do_controller_list2(void)
 {
   int i;
 
-  fprintf(u8g2_cpp_header_fp,
+  fprintf(init_h_fp,
 "typedef void (*setup_func_t)(\n"
 "    u8g2_t *, const u8g2_cb_t *, u8x8_msg_cb, u8x8_msg_cb);\n"
 "\n"
-"struct controller_details_t { \n"
+"typedef struct controller_details_t { \n"
 "    const char *controller_type;\n"
 "    const char *display_name;\n"
 "    const char *com_type;\n"
 "    int width;\n"
 "    int height;\n"
 "    setup_func_t setup_func;\n"
-"};\n"
+"} controller_details_t;\n"
 "\n"
 "extern controller_details_t controller_details[];\n"
 "extern size_t controller_details_size;\n"
 "\n");
 
-fprintf(init_cpp_fp, "controller_details_t controller_details[] = {\n"
+fprintf(init_c_fp, "controller_details_t controller_details[] = {\n"
 "/*\n"
 "{\"CONTROLLER_TYPE\", \"DISPLAY_NAME\", \"COM_TYPE\"\n"
 "      \"WIDTH\", \"HEIGHT\", setup_func}\n*/\n"
@@ -113,7 +114,7 @@ fprintf(init_cpp_fp, "controller_details_t controller_details[] = {\n"
     do_controller_buffer_code2(i, "f", controller_list[i].tile_width*8*controller_list[i].tile_height, controller_list[i].tile_height);
     printf("\n");
   }
-  fprintf(init_cpp_fp,
+  fprintf(init_c_fp,
 "};\n"
 "\n"
 "size_t controller_details_size = sizeof(controller_details) / sizeof(*controller_details);\n"
@@ -129,16 +130,20 @@ int main(void)
   u8x8_cpp_header_fp = fopen("U8x8lib.h", "w");
   fprintf(u8x8_cpp_header_fp, "/* generated code (codebuild), u8g2 project */\n");
 
-  init_cpp_fp = fopen("U8g2lib.cpp", "a");
+  init_c_fp = fopen("u8g2_controllers.c", "w");
+  init_h_fp = fopen("u8g2_controllers.h", "w");
 
   do_controller_list2();
 
   fclose(u8g2_cpp_header_fp);
   fclose(u8x8_cpp_header_fp);
-  fclose(init_cpp_fp);
+  fclose(init_c_fp);
+  fclose(init_h_fp);
 
   insert_into_file("../../cppsrc/U8g2lib.cpp", "U8g2lib.cpp", "// setup details start", "// setup details end */");
   insert_into_file("../../cppsrc/U8g2lib.h", "U8g2lib.h", "/* Arduino constructor list start */", "/* Arduino constructor list end */");
+  insert_into_file("../../csrc/u8g2_controllers.c", "u8g2_controllers.c", "/* controller details start */", "/* controller details end */");
+  insert_into_file("../../csrc/u8g2_controllers.h", "u8g2_controllers.h", "/* controller details start */", "/* controller details end */");
   insert_into_file("../../cppsrc/U8x8lib.h", "U8x8lib.h", "// constructor list start", "// constructor list end");
 
   return 0;

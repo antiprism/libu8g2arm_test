@@ -10,6 +10,7 @@ AM_INIT_AUTOMAKE([1.9 foreign subdir-objects])
 AM_PROG_AR
 
 LT_INIT
+AC_SUBST([U8G2_VER], [$(sh ../u8g2/tools/release/print_release.sh)])
 
 # Checks for programs.
 AC_PROG_CC
@@ -34,6 +35,8 @@ AC_TYPE_UINT8_T
 
 # Checks for library functions.
 AC_CHECK_FUNCS([memset strncasecmp])
+
+AC_SUBST([U8G2_VER], [$(sh ../u8g2/tools/release/print_release.sh)])
 
 AC_CONFIG_FILES([ Makefile
                   src/Makefile

@@ -464,21 +464,6 @@ class U8G2_NULL : public U8G2 {
 
 /* Arduino constructor list start */
 /* generated code (codebuild), u8g2 project */
-typedef void (*setup_func_t)(
-    u8g2_t *, const u8g2_cb_t *, u8x8_msg_cb, u8x8_msg_cb);
-
-struct controller_details_t { 
-    const char *controller_type;
-    const char *display_name;
-    const char *com_type;
-    int width;
-    int height;
-    setup_func_t setup_func;
-};
-
-extern controller_details_t controller_details[];
-extern size_t controller_details_size;
-
 class U8G2_SSD1305_128X32_NONAME_1_4W_SW_SPI : public U8G2 {
   public: U8G2_SSD1305_128X32_NONAME_1_4W_SW_SPI(const u8g2_cb_t *rotation, uint8_t clock, uint8_t data, uint8_t cs, uint8_t dc, uint8_t reset = U8X8_PIN_NONE) : U8G2() {
     u8g2_Setup_ssd1305_128x32_noname_1(&u8g2, rotation, u8x8_byte_arm_linux_4wire_sw_spi, u8x8_arm_linux_gpio_and_delay);
