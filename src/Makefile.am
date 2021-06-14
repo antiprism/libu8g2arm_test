@@ -1695,8 +1695,10 @@ libu8g2armcsrc_la_SOURCES = \
 	csrc/fonts_permissive/u8x8_font_victoriamedium8_n.c \
 	csrc/fonts_permissive/u8x8_font_victoriamedium8_r.c \
 	csrc/fonts_permissive/u8x8_font_victoriamedium8_u.c \
+	cppsrc/U8G2Controller.cpp \
 	cppsrc/U8g2lib.cpp \
 	cppsrc/U8x8lib.cpp \
+	cppsrc/U8G2Controller.h \
 	cppsrc/U8g2lib.h \
 	cppsrc/U8x8lib.h \
 	# terminate list
@@ -1970,6 +1972,7 @@ pkginclude_HEADERS = \
 	include/u8g2_controllers.h \
 	include/u8g2.h \
 	include/u8x8.h \
+	include/U8G2Controller.h \
 	include/U8g2lib.h \
 	include/U8x8lib.h \
 	include/u8g2_fonts_gplcopyleft.h \

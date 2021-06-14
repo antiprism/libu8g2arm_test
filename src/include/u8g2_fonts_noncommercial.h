@@ -1,4 +1,5 @@
-#include "../u8g2.h"
+
+#include "u8g2.h"
 
 #include "u8x8_fonts_noncommercial.h"
 
@@ -13,18 +14,3 @@ extern const uint8_t u8g2_font_lucasarts_scumm_subtitle_o_tn[] U8G2_FONT_SECTION
 extern const uint8_t u8g2_font_lucasarts_scumm_subtitle_r_tf[] U8G2_FONT_SECTION("u8g2_font_lucasarts_scumm_subtitle_r_tf");
 extern const uint8_t u8g2_font_lucasarts_scumm_subtitle_r_tr[] U8G2_FONT_SECTION("u8g2_font_lucasarts_scumm_subtitle_r_tr");
 extern const uint8_t u8g2_font_lucasarts_scumm_subtitle_r_tn[] U8G2_FONT_SECTION("u8g2_font_lucasarts_scumm_subtitle_r_tn");
-
-
-const font_lookup u8g2_fonts_noncommercial[] = {
-  { "u8g2_font_fancypixels_tf", u8g2_font_fancypixels_tf},
-  { "u8g2_font_fancypixels_tr", u8g2_font_fancypixels_tr},
-  { "u8g2_font_iconquadpix_m_all", u8g2_font_iconquadpix_m_all},
-  { "u8g2_font_lastapprenticebold_tr", u8g2_font_lastapprenticebold_tr},
-  { "u8g2_font_lastapprenticethin_tr", u8g2_font_lastapprenticethin_tr},
-  { "u8g2_font_lucasarts_scumm_subtitle_o_tf", u8g2_font_lucasarts_scumm_subtitle_o_tf},
-  { "u8g2_font_lucasarts_scumm_subtitle_o_tr", u8g2_font_lucasarts_scumm_subtitle_o_tr},
-  { "u8g2_font_lucasarts_scumm_subtitle_o_tn", u8g2_font_lucasarts_scumm_subtitle_o_tn},
-  { "u8g2_font_lucasarts_scumm_subtitle_r_tf", u8g2_font_lucasarts_scumm_subtitle_r_tf},
-  { "u8g2_font_lucasarts_scumm_subtitle_r_tr", u8g2_font_lucasarts_scumm_subtitle_r_tr},
-  { "u8g2_font_lucasarts_scumm_subtitle_r_tn", u8g2_font_lucasarts_scumm_subtitle_r_tn},
-};

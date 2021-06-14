@@ -17,6 +17,8 @@ cp -a ${U8G2_SRC_DIR}/csrc ${SRC_DIR}
 cp -a ${U8G2_SRC_DIR}/cppsrc ${SRC_DIR}
 cp -a ${SETUP_DIR}/files/U8x8lib.cpp ${SRC_DIR}/cppsrc  # overwrite
 cp -a ${SETUP_DIR}/files/U8g2lib.cpp ${SRC_DIR}/cppsrc  # overwrite
+cp -a ${SETUP_DIR}/files/U8G2Controller.cpp ${SRC_DIR}/cppsrc
+cp -a ${SETUP_DIR}/files/U8G2Controller.h ${SRC_DIR}/cppsrc
 cp -a ${SETUP_DIR}/files/u8g2_controllers.c ${SRC_DIR}/csrc
 cp -a ${SETUP_DIR}/files/u8g2_controllers.h ${SRC_DIR}/csrc
 # cp -a ${SETUP_DIR}/files/u8g2_fonts_permissive.c ${SRC_DIR}/csrc
@@ -168,4 +170,4 @@ echo -e "\t# terminate list" >> ${SRC_DIR}/Makefile.am
 
 # sed 's!<u8g2.h>!"u8g2.h"!' ${PORT_SRC_DIR}/port/U8g2lib.h > ${SRC_DIR}/include/u8g2arm.h
 sed -i 's!\.\./[^/]*/!!' ${SRC_DIR}/include/*.h
-
+sed -i 's!\.\./!!' ${SRC_DIR}/include/*.h

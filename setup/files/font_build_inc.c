@@ -237,8 +237,10 @@ void txtconv(int i, int fm, char *fms, int bm, char *bms, int mm, char *mms)
            target_font_identifier, section, target_font_identifier,
            font_dirs[font_licence_type], prefix);
   system(buff);
-  snprintf(buff, buff_sz, "echo '  { \"%s\", %s},' >> %s/%s_font_lookup.txt", target_font_identifier,
-           target_font_identifier, font_dirs[font_licence_type], prefix);
+  snprintf(buff, buff_sz,
+           "echo '  { \"%s\", \"%s\", \"%s\", %s},' >> %s/%s_font_lookup.txt",
+           target_font_identifier, fn, gr, target_font_identifier,
+           font_dirs[font_licence_type], prefix);
   system(buff);
 
 
@@ -275,34 +277,52 @@ int main(void)
   for(int i=1; i<4; i++) {
     const char *dir = font_dirs[i];
     for( int j=0; j<2; j++) {
-      char inc[buff_sz];
+      char path[buff_sz];
       const char *pre = prefixes[j];
-      snprintf(inc, buff_sz, "%s/%s_%s.h", dir, pre, dir);
-
-      snprintf(buff, buff_sz, "echo '#include \"../%s.h\"\n' > %s", pre, inc);
+      snprintf(path, buff_sz, "%s/%s_%s", dir, pre, dir);
+      snprintf(buff, buff_sz, "echo > %s.h", path);
       system(buff);
-      if (j == 1) { /*u8g2 */
-        snprintf(buff, buff_sz, "echo '#include \"%s_%s.h\"\n' >> %s", "u8x8",
-                 dir, inc);
+      snprintf(buff, buff_sz, "echo > %s.cpp", path);
+      system(buff);
+
+      if(i != 1) {
+        snprintf(buff, buff_sz, "echo '#include \"../%s.h\"\n' >> %s.h", pre, path);
         system(buff);
+        if (j == 1) { /*u8g2 */
+          snprintf(buff, buff_sz, "echo '#include \"%s_%s.h\"\n' >> %s.h", "u8x8",
+                   dir, path);
+          system(buff);
+        }
       }
 
-      snprintf(buff, buff_sz, "cat %s/%s_font_decls.txt >> %s", dir, pre, inc);
+      snprintf(buff, buff_sz, "cat %s/%s_font_decls.txt >> %s.h", dir, pre,
+               path);
       system(buff);
 
-      snprintf(buff, buff_sz, "echo '\n\nconst font_lookup %s_%s[] = {' >> %s",
-               pre, dir, inc);
+      snprintf(buff, buff_sz,
+               "echo '\n\nextern const font_lookup %s_%s[]; >> %s.h", pre, dir,
+               path);
       system(buff);
 
-      snprintf(buff, buff_sz, "cat %s/%s_font_lookup.txt >> %s", dir, pre, inc);
+      snprintf(buff, buff_sz, "echo '#include \"%s_%s.h\"\n' >> %s.cpp", pre,
+               dir, path);
       system(buff);
 
-      snprintf(buff, buff_sz, "echo '};' >> %s", inc);
+      snprintf(buff, buff_sz,
+               "echo '\n\nconst font_lookup %s_%s[] = {' >> %s.cpp", pre, dir,
+               path);
+      system(buff);
+
+      snprintf(buff, buff_sz, "cat %s/%s_font_lookup.txt >> %s.cpp", dir, pre,
+               path);
+      system(buff);
+
+      snprintf(buff, buff_sz, "echo '};' >> %s.cpp", path);
       system(buff);
 
       if (i == 1) { // permissive will insert the text and not use the header
         snprintf(out_file, buff_sz, "../../../csrc/%s.h", pre);
-        snprintf(in_file, buff_sz, "%s/%s_font_decls.txt", dir, pre);
+        snprintf(in_file, buff_sz, "%s/%s_%s.h", dir, pre, dir);
         insert_file_into_file(out_file, in_file, "/* start font list */",
                          "/* end font list */");
       }

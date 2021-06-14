@@ -1071,6 +1071,7 @@ void u8log_u8x8_cb(u8log_t * u8log);
 
 /*==========================================*/
 /* start font list */
+
 extern const uint8_t u8x8_font_amstrad_cpc_extended_f[] U8X8_FONT_SECTION("u8x8_font_amstrad_cpc_extended_f");
 extern const uint8_t u8x8_font_amstrad_cpc_extended_r[] U8X8_FONT_SECTION("u8x8_font_amstrad_cpc_extended_r");
 extern const uint8_t u8x8_font_amstrad_cpc_extended_n[] U8X8_FONT_SECTION("u8x8_font_amstrad_cpc_extended_n");

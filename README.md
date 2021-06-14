@@ -45,7 +45,7 @@ Make a *arm-unknown-linux-gnueabi* toolchain with
 Using the library
 ---------------------------
 
-To use the U8G2 library (contains permissive license fonts only)
+To use the U8g2 library (contains permissive license fonts only)
 include `libu8g2arm/u8g2.h`, and link to `libu8g2arm` (licence:
 COPYING_permissive). To also use GPL and other copyleft fonts, additionally
 include `libu8g2arm/u8g2_fonts_gplcopyleft.h` and link to
