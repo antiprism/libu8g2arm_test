@@ -121,199 +121,199 @@ public:
    *
    *    CONTROLLER     MODEL               PROTOCOLS
    *    ----------     -----               ---------
- *    
- *    HX1230         96X68               SPI,3W_SW_SPI
- *    
- *    IL3820         296X128             SPI,3W_SW_SPI
- *                   V2_296X128          SPI,3W_SW_SPI
- *    
- *    IST3020        ERC19264            SPI,8080
- *    
- *    IST7920        128X128             SPI,8080
- *    
- *    LD7032         60X32               I2C,SPI
- *                   60X32_ALT           I2C,SPI
- *    
- *    LS013B7DH03    128X128             SPI
- *    
- *    LS013B7DH05    144X168             SPI
- *    
- *    LS027B7DH01    400X240             SPI
- *                   M0_400X240          SPI
- *    
- *    MAX7219        32X8                SPI
- *                   64X8                SPI
- *                   8X8                 SPI
- *    
- *    NT7534         TG12864R            SPI,8080
- *    
- *    PCD8544        84X48               SPI,3W_SW_SPI
- *    
- *    PCF8812        96X65               SPI,3W_SW_SPI
- *    
- *    RA8835         320X240             8080
- *                   NHD_240X128         8080
- *    
- *    S1D15721       240X64              SPI,8080
- *    
- *    S1D15E06       160100              SPI,8080
- *    
- *    SED1330        240X128             8080
- *    
- *    SH1106         128X32_VISIONOX     I2C,SPI,3W_SW_SPI,8080
- *                   128X64_NONAME       I2C,SPI,3W_SW_SPI,8080
- *                   128X64_VCOMH0       I2C,SPI,3W_SW_SPI,8080
- *                   128X64_WINSTAR      I2C,SPI,3W_SW_SPI,8080
- *                   64X32               I2C,SPI,3W_SW_SPI,8080
- *                   72X40_WISE          I2C,SPI,3W_SW_SPI,8080
- *    
- *    SH1107         128X128             I2C,SPI,3W_SW_SPI,8080
- *                   64X128              I2C,SPI,3W_SW_SPI,8080
- *                   PIMORONI_128X128    I2C,SPI,3W_SW_SPI,8080
- *                   SEEED_128X128       I2C,SPI,3W_SW_SPI,8080
- *                   SEEED_96X96         I2C,SPI,3W_SW_SPI,8080
- *    
- *    SH1108         160X160             I2C,SPI,3W_SW_SPI,8080
- *    
- *    SH1122         256X64              I2C,SPI,3W_SW_SPI,8080
- *    
- *    SSD0323        OS128064            I2C,SPI,3W_SW_SPI,8080
- *    
- *    SSD1305        128X32_ADAFRUIT     I2C,SPI,8080
- *                   128X32_NONAME       I2C,SPI,8080
- *                   128X64_ADAFRUIT     I2C,SPI,8080
- *                   128X64_RAYSTAR      I2C,SPI,8080
- *    
- *    SSD1306        128X32_UNIVISION    I2C,SPI,3W_SW_SPI,8080
- *                   128X32_WINSTAR      I2C,SPI,3W_SW_SPI,8080
- *                   128X64_ALT0         I2C,SPI,3W_SW_SPI,8080
- *                   128X64_NONAME       I2C,SPI,3W_SW_SPI,8080
- *                   128X64_VCOMH0       I2C,SPI,3W_SW_SPI,8080
- *                   2040X16             SPI,3W_SW_SPI,8080
- *                   48X64_WINSTAR       I2C,SPI,3W_SW_SPI,8080
- *                   64X32_1F            I2C,SPI,3W_SW_SPI,8080
- *                   64X32_NONAME        I2C,SPI,3W_SW_SPI,8080
- *                   64X48_ER            I2C,SPI,3W_SW_SPI,8080
- *                   72X40_ER            I2C,SPI,3W_SW_SPI,8080
- *                   96X16_ER            I2C,SPI,3W_SW_SPI,8080
- *    
- *    SSD1309        128X64_NONAME0      I2C,SPI,8080
- *                   128X64_NONAME2      I2C,SPI,8080
- *    
- *    SSD1316        128X32              I2C,SPI,8080
- *    
- *    SSD1317        96X96               I2C,SPI,8080
- *    
- *    SSD1318        128X96              I2C,SPI,3W_SW_SPI,8080
- *                   128X96_XCP          I2C,SPI,3W_SW_SPI,8080
- *    
- *    SSD1320        160X132             SPI,3W_SW_SPI,8080
- *                   160X32              SPI,3W_SW_SPI,8080
- *    
- *    SSD1322        NHD_128X64          SPI,3W_SW_SPI,8080
- *                   NHD_256X64          SPI,3W_SW_SPI,8080
- *    
- *    SSD1325        NHD_128X64          I2C,SPI,3W_SW_SPI,8080
- *    
- *    SSD1326        ER_256X32           I2C,SPI,3W_SW_SPI,8080
- *    
- *    SSD1327        EA_W128128          I2C,SPI,3W_SW_SPI,8080
- *                   MIDAS_128X128       I2C,SPI,3W_SW_SPI,8080
- *                   SEEED_96X96         I2C,SPI,3W_SW_SPI,8080
- *                   VISIONOX_128X96     I2C,SPI,3W_SW_SPI,8080
- *                   WS_128X128          I2C,SPI,3W_SW_SPI,8080
- *                   WS_96X64            I2C,SPI,3W_SW_SPI,8080
- *    
- *    SSD1329        128X96_NONAME       SPI,8080
- *    
- *    SSD1606        172X72              SPI,3W_SW_SPI
- *    
- *    SSD1607        200X200             SPI,3W_SW_SPI
- *                   GD_200X200          SPI,3W_SW_SPI
- *                   WS_200X200          SPI,3W_SW_SPI
- *    
- *    ST7511         AVD_320X240         SPI,3W_SW_SPI,8080
- *    
- *    ST75256        JLX172104           I2C,SPI,3W_SW_SPI,8080
- *                   JLX19296            I2C,SPI,3W_SW_SPI,8080
- *                   JLX240160           I2C,SPI,3W_SW_SPI,8080
- *                   JLX256128           I2C,SPI,3W_SW_SPI,8080
- *                   JLX256160           I2C,SPI,3W_SW_SPI,8080
- *                   JLX256160M          I2C,SPI,3W_SW_SPI,8080
- *                   JLX256160_ALT       I2C,SPI,3W_SW_SPI,8080
- *                   JLX25664            I2C,SPI,3W_SW_SPI,8080
- *                   WO256X128           I2C,SPI,3W_SW_SPI,8080
- *    
- *    ST7528         ERC16064            I2C,SPI,8080
- *                   NHD_C160100         I2C,SPI,8080
- *    
- *    ST75320        JLX320240           I2C,SPI,3W_SW_SPI,8080
- *    
- *    ST7565         64128N              SPI,3W_SW_SPI,8080
- *                   EA_DOGM128          SPI,3W_SW_SPI,8080
- *                   EA_DOGM132          SPI,3W_SW_SPI,8080
- *                   ERC12864            SPI,3W_SW_SPI,8080
- *                   ERC12864_ALT        SPI,3W_SW_SPI,8080
- *                   JLX12864            SPI,3W_SW_SPI,8080
- *                   KS0713              SPI,3W_SW_SPI,8080
- *                   LM6059              SPI,3W_SW_SPI,8080
- *                   LM6063              SPI,3W_SW_SPI,8080
- *                   LX12864             SPI,3W_SW_SPI,8080
- *                   NHD_C12832          SPI,3W_SW_SPI,8080
- *                   NHD_C12864          SPI,3W_SW_SPI,8080
- *                   ZOLEN_128X64        SPI,3W_SW_SPI,8080
- *    
- *    ST7567         64X32               I2C,SPI,8080
- *                   ENH_DG128064        SPI,8080
- *                   ENH_DG128064I       SPI,8080
- *                   HEM6432             I2C,SPI,8080
- *                   JLX12864            SPI,8080
- *                   OS12864             SPI,8080
- *                   PI_132X64           SPI,8080
- *    
- *    ST7571         128X128             I2C,SPI,8080
- *    
- *    ST7586S        ERC240160           SPI,3W_SW_SPI,8080
- *                   S028HN118A          SPI
- *                   YMC240160           SPI,3W_SW_SPI,8080
- *    
- *    ST7588         JLX12864            I2C,SPI,3W_SW_SPI,8080
- *    
- *    ST7920         128X64              8080
- *                   192X32              8080
- *    
- *    T6963          128X64              8080
- *                   128X64_ALT          8080
- *                   160X80              8080
- *                   240X128             8080
- *                   240X64              8080
- *                   256X64              8080
- *    
- *    UC1601         128X32              I2C,SPI,3W_SW_SPI,8080
- *                   128X64              I2C,SPI,3W_SW_SPI,8080
- *    
- *    UC1604         JLX19264            I2C,SPI,3W_SW_SPI,8080
- *    
- *    UC1608         240X128             I2C,SPI,3W_SW_SPI,8080
- *                   DEM240064           I2C,SPI,3W_SW_SPI,8080
- *                   ERC240120           I2C,SPI,3W_SW_SPI,8080
- *                   ERC24064            I2C,SPI,3W_SW_SPI,8080
- *    
- *    UC1610         EA_DOGXL160         I2C,SPI,3W_SW_SPI,8080
- *    
- *    UC1611         CG160160            I2C,SPI,3W_SW_SPI,8080
- *                   EA_DOGM240          I2C,SPI,3W_SW_SPI,8080
- *                   EA_DOGXL240         I2C,SPI,3W_SW_SPI,8080
- *                   EW50850             I2C,SPI,3W_SW_SPI,8080
- *                   IDS4073             I2C,SPI,3W_SW_SPI,8080
- *    
- *    UC1617         JLX128128           I2C,SPI,3W_SW_SPI
- *    
- *    UC1638         160X128             SPI,3W_SW_SPI,8080
- *    
- *    UC1701         EA_DOGS102          SPI,3W_SW_SPI,8080
- *                   MINI12864           SPI,3W_SW_SPI,8080
- *    
+   *    
+   *    HX1230         96X68               SPI,3W_SW_SPI
+   *    
+   *    IL3820         296X128             SPI,3W_SW_SPI
+   *                   V2_296X128          SPI,3W_SW_SPI
+   *    
+   *    IST3020        ERC19264            SPI,8080
+   *    
+   *    IST7920        128X128             SPI,8080
+   *    
+   *    LD7032         60X32               I2C,SPI
+   *                   60X32_ALT           I2C,SPI
+   *    
+   *    LS013B7DH03    128X128             SPI
+   *    
+   *    LS013B7DH05    144X168             SPI
+   *    
+   *    LS027B7DH01    400X240             SPI
+   *                   M0_400X240          SPI
+   *    
+   *    MAX7219        32X8                SPI
+   *                   64X8                SPI
+   *                   8X8                 SPI
+   *    
+   *    NT7534         TG12864R            SPI,8080
+   *    
+   *    PCD8544        84X48               SPI,3W_SW_SPI
+   *    
+   *    PCF8812        96X65               SPI,3W_SW_SPI
+   *    
+   *    RA8835         320X240             8080
+   *                   NHD_240X128         8080
+   *    
+   *    S1D15721       240X64              SPI,8080
+   *    
+   *    S1D15E06       160100              SPI,8080
+   *    
+   *    SED1330        240X128             8080
+   *    
+   *    SH1106         128X32_VISIONOX     I2C,SPI,3W_SW_SPI,8080
+   *                   128X64_NONAME       I2C,SPI,3W_SW_SPI,8080
+   *                   128X64_VCOMH0       I2C,SPI,3W_SW_SPI,8080
+   *                   128X64_WINSTAR      I2C,SPI,3W_SW_SPI,8080
+   *                   64X32               I2C,SPI,3W_SW_SPI,8080
+   *                   72X40_WISE          I2C,SPI,3W_SW_SPI,8080
+   *    
+   *    SH1107         128X128             I2C,SPI,3W_SW_SPI,8080
+   *                   64X128              I2C,SPI,3W_SW_SPI,8080
+   *                   PIMORONI_128X128    I2C,SPI,3W_SW_SPI,8080
+   *                   SEEED_128X128       I2C,SPI,3W_SW_SPI,8080
+   *                   SEEED_96X96         I2C,SPI,3W_SW_SPI,8080
+   *    
+   *    SH1108         160X160             I2C,SPI,3W_SW_SPI,8080
+   *    
+   *    SH1122         256X64              I2C,SPI,3W_SW_SPI,8080
+   *    
+   *    SSD0323        OS128064            I2C,SPI,3W_SW_SPI,8080
+   *    
+   *    SSD1305        128X32_ADAFRUIT     I2C,SPI,8080
+   *                   128X32_NONAME       I2C,SPI,8080
+   *                   128X64_ADAFRUIT     I2C,SPI,8080
+   *                   128X64_RAYSTAR      I2C,SPI,8080
+   *    
+   *    SSD1306        128X32_UNIVISION    I2C,SPI,3W_SW_SPI,8080
+   *                   128X32_WINSTAR      I2C,SPI,3W_SW_SPI,8080
+   *                   128X64_ALT0         I2C,SPI,3W_SW_SPI,8080
+   *                   128X64_NONAME       I2C,SPI,3W_SW_SPI,8080
+   *                   128X64_VCOMH0       I2C,SPI,3W_SW_SPI,8080
+   *                   2040X16             SPI,3W_SW_SPI,8080
+   *                   48X64_WINSTAR       I2C,SPI,3W_SW_SPI,8080
+   *                   64X32_1F            I2C,SPI,3W_SW_SPI,8080
+   *                   64X32_NONAME        I2C,SPI,3W_SW_SPI,8080
+   *                   64X48_ER            I2C,SPI,3W_SW_SPI,8080
+   *                   72X40_ER            I2C,SPI,3W_SW_SPI,8080
+   *                   96X16_ER            I2C,SPI,3W_SW_SPI,8080
+   *    
+   *    SSD1309        128X64_NONAME0      I2C,SPI,8080
+   *                   128X64_NONAME2      I2C,SPI,8080
+   *    
+   *    SSD1316        128X32              I2C,SPI,8080
+   *    
+   *    SSD1317        96X96               I2C,SPI,8080
+   *    
+   *    SSD1318        128X96              I2C,SPI,3W_SW_SPI,8080
+   *                   128X96_XCP          I2C,SPI,3W_SW_SPI,8080
+   *    
+   *    SSD1320        160X132             SPI,3W_SW_SPI,8080
+   *                   160X32              SPI,3W_SW_SPI,8080
+   *    
+   *    SSD1322        NHD_128X64          SPI,3W_SW_SPI,8080
+   *                   NHD_256X64          SPI,3W_SW_SPI,8080
+   *    
+   *    SSD1325        NHD_128X64          I2C,SPI,3W_SW_SPI,8080
+   *    
+   *    SSD1326        ER_256X32           I2C,SPI,3W_SW_SPI,8080
+   *    
+   *    SSD1327        EA_W128128          I2C,SPI,3W_SW_SPI,8080
+   *                   MIDAS_128X128       I2C,SPI,3W_SW_SPI,8080
+   *                   SEEED_96X96         I2C,SPI,3W_SW_SPI,8080
+   *                   VISIONOX_128X96     I2C,SPI,3W_SW_SPI,8080
+   *                   WS_128X128          I2C,SPI,3W_SW_SPI,8080
+   *                   WS_96X64            I2C,SPI,3W_SW_SPI,8080
+   *    
+   *    SSD1329        128X96_NONAME       SPI,8080
+   *    
+   *    SSD1606        172X72              SPI,3W_SW_SPI
+   *    
+   *    SSD1607        200X200             SPI,3W_SW_SPI
+   *                   GD_200X200          SPI,3W_SW_SPI
+   *                   WS_200X200          SPI,3W_SW_SPI
+   *    
+   *    ST7511         AVD_320X240         SPI,3W_SW_SPI,8080
+   *    
+   *    ST75256        JLX172104           I2C,SPI,3W_SW_SPI,8080
+   *                   JLX19296            I2C,SPI,3W_SW_SPI,8080
+   *                   JLX240160           I2C,SPI,3W_SW_SPI,8080
+   *                   JLX256128           I2C,SPI,3W_SW_SPI,8080
+   *                   JLX256160           I2C,SPI,3W_SW_SPI,8080
+   *                   JLX256160M          I2C,SPI,3W_SW_SPI,8080
+   *                   JLX256160_ALT       I2C,SPI,3W_SW_SPI,8080
+   *                   JLX25664            I2C,SPI,3W_SW_SPI,8080
+   *                   WO256X128           I2C,SPI,3W_SW_SPI,8080
+   *    
+   *    ST7528         ERC16064            I2C,SPI,8080
+   *                   NHD_C160100         I2C,SPI,8080
+   *    
+   *    ST75320        JLX320240           I2C,SPI,3W_SW_SPI,8080
+   *    
+   *    ST7565         64128N              SPI,3W_SW_SPI,8080
+   *                   EA_DOGM128          SPI,3W_SW_SPI,8080
+   *                   EA_DOGM132          SPI,3W_SW_SPI,8080
+   *                   ERC12864            SPI,3W_SW_SPI,8080
+   *                   ERC12864_ALT        SPI,3W_SW_SPI,8080
+   *                   JLX12864            SPI,3W_SW_SPI,8080
+   *                   KS0713              SPI,3W_SW_SPI,8080
+   *                   LM6059              SPI,3W_SW_SPI,8080
+   *                   LM6063              SPI,3W_SW_SPI,8080
+   *                   LX12864             SPI,3W_SW_SPI,8080
+   *                   NHD_C12832          SPI,3W_SW_SPI,8080
+   *                   NHD_C12864          SPI,3W_SW_SPI,8080
+   *                   ZOLEN_128X64        SPI,3W_SW_SPI,8080
+   *    
+   *    ST7567         64X32               I2C,SPI,8080
+   *                   ENH_DG128064        SPI,8080
+   *                   ENH_DG128064I       SPI,8080
+   *                   HEM6432             I2C,SPI,8080
+   *                   JLX12864            SPI,8080
+   *                   OS12864             SPI,8080
+   *                   PI_132X64           SPI,8080
+   *    
+   *    ST7571         128X128             I2C,SPI,8080
+   *    
+   *    ST7586S        ERC240160           SPI,3W_SW_SPI,8080
+   *                   S028HN118A          SPI
+   *                   YMC240160           SPI,3W_SW_SPI,8080
+   *    
+   *    ST7588         JLX12864            I2C,SPI,3W_SW_SPI,8080
+   *    
+   *    ST7920         128X64              8080
+   *                   192X32              8080
+   *    
+   *    T6963          128X64              8080
+   *                   128X64_ALT          8080
+   *                   160X80              8080
+   *                   240X128             8080
+   *                   240X64              8080
+   *                   256X64              8080
+   *    
+   *    UC1601         128X32              I2C,SPI,3W_SW_SPI,8080
+   *                   128X64              I2C,SPI,3W_SW_SPI,8080
+   *    
+   *    UC1604         JLX19264            I2C,SPI,3W_SW_SPI,8080
+   *    
+   *    UC1608         240X128             I2C,SPI,3W_SW_SPI,8080
+   *                   DEM240064           I2C,SPI,3W_SW_SPI,8080
+   *                   ERC240120           I2C,SPI,3W_SW_SPI,8080
+   *                   ERC24064            I2C,SPI,3W_SW_SPI,8080
+   *    
+   *    UC1610         EA_DOGXL160         I2C,SPI,3W_SW_SPI,8080
+   *    
+   *    UC1611         CG160160            I2C,SPI,3W_SW_SPI,8080
+   *                   EA_DOGM240          I2C,SPI,3W_SW_SPI,8080
+   *                   EA_DOGXL240         I2C,SPI,3W_SW_SPI,8080
+   *                   EW50850             I2C,SPI,3W_SW_SPI,8080
+   *                   IDS4073             I2C,SPI,3W_SW_SPI,8080
+   *    
+   *    UC1617         JLX128128           I2C,SPI,3W_SW_SPI
+   *    
+   *    UC1638         160X128             SPI,3W_SW_SPI,8080
+   *    
+   *    UC1701         EA_DOGS102          SPI,3W_SW_SPI,8080
+   *                   MINI12864           SPI,3W_SW_SPI,8080
+   *    
    *
    *    PROTOCOL OPTIONS
    *

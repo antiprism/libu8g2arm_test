@@ -1,7 +1,5 @@
-# libu8g2arm
-
-
-**WARNING: THIS IS A PROJECT PREVIEW FOR TESTING ONLY**
+libu8g2arm
+==========
 
 The libu8g2arm package provides the
 [U8g2: Library for monochrome displays](https://github.com/olikraus/u8g2)
@@ -10,8 +8,24 @@ using the
 [u8g2-arm-linux](https://github.com/wuhanstudio/u8g2-arm-linux)
 port.
 
-## Build and Install
+Support
+-------
 
+libu8g2arm is a new package and likely to contain bugs.
+
+The package is created by a script, which makes several changes
+to the base U8g2 code and determines how the code will be built.
+Any bugs found when using libu8g2arm should be considered to
+be introduced by the libu8g2arm package, and reported to the
+libu8g2arm project (rather than to the U8g2 project).
+
+Please note, I am a casual user of U8g2 with only a couple of
+screens to test with. I will respond to every issue reported, but
+unless the issue clearly relates to packaging I may not be able
+to help.
+
+Build and Install
+-----------------
 
 The package is built with the Autotools. Create the configure file
 by running
@@ -42,12 +56,16 @@ Make a *arm-unknown-linux-gnueabi* toolchain with
    make install-strip
 ```
 
-## Using the library
+Using the library
+-----------------
 
-A display can set up in the usual U8g2 way, with some minor differences. A
-C++ method is also provided for specifying the display at runtime.
+A display can set up as detailed by the U8g2 project, with some minor
+differences. A C++ method is also provided for specifying the display
+at runtime.
 
-### Using C the usual way
+### Using C and a fixed display
+
+Example program [ex_init_c.c](setup/examples/ex_init_c.c).
 
 Include
 ```
@@ -74,7 +92,9 @@ register the device parameters
 * Hardware I2C - u8g2arm_arm_init_hw_i2c(u8x8, bus_number)
 * Hardware SPI - u8g2arm_arm_init_hw_spi(u8x8, bus_number, cs_number)
 
-### Using C++ the usual way
+### Using C++ and a fixed display
+
+Example program [ex_init_class.cpp](setup/examples/ex_init_class.cpp).
 
 Include
 ```
@@ -94,23 +114,23 @@ register the device parameters
 * Hardware I2C - u8g2arm_arm_init_hw_i2c(u8x8, bus_number)
 * Hardware SPI - u8g2arm_arm_init_hw_spi(u8x8, bus_number, cs_number)
 
-### Using C++ and specifying the display at runtime
+### Using C++ and a display specified at runtime
+
+Example program [ex_init_runtime.cpp](setup/examples/ex_init_runtime.cpp).
 
 Include
 ```
-#include <libu8g2arm/U8G2Controller.h>
+#include <libu8g2arm/U8g2Controller.h>
 #include <libu8g2arm/U8g2lib.h>
 ```
 
-See
-* example program [ex_init_runtime.cpp](examples/ex_init_runtime.cpp)
-* header documentation [U8g2Controller.h](src/include/U8g2Controller.h),
-  which includes a long list of controller and parameter settings at the end.
+The header [U8g2Controller.h](src/include/U8g2Controller.h) is fully
+documented and contains all the controller and parameter settings.
 
 ### Linking and Fonts
 
-To link to the U8g2arm library, which contains contains only permissive license
-code and fonts fonts, link to `libu8g2arm` (licence: COPYING_permissive).
+To link to the U8g2arm library, which contains contains only permissive
+license code and fonts, link to `libu8g2arm` (licence: COPYING_permissive).
 
 To use GPL and other copyleft fonts, additionally include
 `libu8g2arm/u8g2_fonts_gplcopyleft.h` and link to `libu8g2armfonts_gplcopyleft`
@@ -124,22 +144,21 @@ Package Regeneration
 --------------------
 
 The package includes all the components used to generate it, which can
-used to synchronise with the latest U8g2 code.
+be used to synchronise with the latest U8g2 code.
 
-The regeneration is not required for normal use, and may need to be
-updated to account for changes to U8g2. For example, the regeneration
-script may fail, or some replacement files in setup/files may need to
-be updated manually if the originals change.
+Regenerating the package is not required for normal use, and the
+regeneration process may need to be updated to account for changes to U8g2.
+For example, the regeneration script may fail, or some replacement files
+in setup/files may need to be updated manually if the original files change.
 
 **WARNING**: regenerating the package will delete the src directory before
-recreating it, and any local changes under the src directory will be lost.
+recreating it, and any local changes made under the src directory will be lost.
 
 To regenerate the package, clone
 [U8g2](https://github.com/olikraus/u8g2)
 into a directory parallel to the libug2arm directory, then run
 [setup_src.sh](setup_src.sh)
-from the libug2arm top level directory.
-
+from the libu8g2arm top level directory.
 
 Contact
 -------
