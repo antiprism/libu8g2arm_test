@@ -23,8 +23,8 @@ be introduced by the libu8g2arm package, and reported to the
 libu8g2arm project (rather than to the U8g2 project). I will
 respond to every issue reported, and will fix anything that
 relates to packaging. However, The help I can provide for other
-kinds of issues will be limited, as I am only a casual U8g2 user
-and only have a couple of screens for testing.
+kinds of issues will be limited (I am a casual U8g2 user
+and only have a couple of screens for testing).
 
 
 Build and Install
