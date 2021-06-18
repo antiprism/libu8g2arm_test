@@ -19,3 +19,6 @@ extern const uint8_t u8x8_font_px437wyse700a_2x2_n[] U8X8_FONT_SECTION("u8x8_fon
 extern const uint8_t u8x8_font_px437wyse700b_2x2_f[] U8X8_FONT_SECTION("u8x8_font_px437wyse700b_2x2_f");
 extern const uint8_t u8x8_font_px437wyse700b_2x2_r[] U8X8_FONT_SECTION("u8x8_font_px437wyse700b_2x2_r");
 extern const uint8_t u8x8_font_px437wyse700b_2x2_n[] U8X8_FONT_SECTION("u8x8_font_px437wyse700b_2x2_n");
+$
+
+extern const font_lookup u8x8_fonts_gplcopyleft[];

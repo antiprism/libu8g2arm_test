@@ -17,8 +17,8 @@ cp -a ${U8G2_SRC_DIR}/csrc ${SRC_DIR}
 cp -a ${U8G2_SRC_DIR}/cppsrc ${SRC_DIR}
 cp -a ${SETUP_DIR}/files/U8x8lib.cpp ${SRC_DIR}/cppsrc  # overwrite
 cp -a ${SETUP_DIR}/files/U8g2lib.cpp ${SRC_DIR}/cppsrc  # overwrite
-cp -a ${SETUP_DIR}/files/U8G2Controller.cpp ${SRC_DIR}/cppsrc
-cp -a ${SETUP_DIR}/files/U8G2Controller.h ${SRC_DIR}/cppsrc
+cp -a ${SETUP_DIR}/files/U8g2Controller.cpp ${SRC_DIR}/cppsrc
+cp -a ${SETUP_DIR}/files/U8g2Controller.h ${SRC_DIR}/cppsrc
 cp -a ${SETUP_DIR}/files/u8g2_controllers.c ${SRC_DIR}/csrc
 cp -a ${SETUP_DIR}/files/u8g2_controllers.h ${SRC_DIR}/csrc
 # cp -a ${SETUP_DIR}/files/u8g2_fonts_permissive.c ${SRC_DIR}/csrc
@@ -66,6 +66,7 @@ sed -i 's!#include "u8g2.h"!#include "../csrc/u8g2.h"!' ${SRC_DIR}/cppsrc/U8g2li
 sed -i 's! : public Print!!' ${SRC_DIR}/cppsrc/U8g2lib.h
 
 sed -i $'s!^int main.*!#include "font_build_inc.c"\\\n\\\nint main_orig(void)!' ${SRC_DIR}/setup/font/build/build.c
+
 (cd src/setup/font/build && rm -f build1 && make && ./build1)
 
 FONTS_DIR=${SRC_DIR}/setup/font/build/
@@ -80,6 +81,9 @@ sed -i 's!u8x8_gpio_and_delay_arduino!u8x8_arm_linux_gpio_and_delay!' ${SRC_DIR}
 sed -i 's!u8x8_gpio_and_delay_arduino!u8x8_arm_linux_gpio_and_delay!' ${SRC_DIR}/setup/codebuild/codebuild.c
 sed -i 's!int main!int main_orig!' ${SRC_DIR}/setup/codebuild/codebuild.c
 (cd src/setup/codebuild; make -f makefile; ./codebuild_cpp)
+# Add controller list to header docs
+cp -a ${SETUP_DIR}/controller_list ${SRC_DIR}/setup
+(cd src/setup/controller_list; sh controllers.sh)
 
 U8G2_VER=$(sh ../u8g2/tools/release/print_release.sh)
 

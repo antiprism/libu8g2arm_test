@@ -300,7 +300,7 @@ int main(void)
       system(buff);
 
       snprintf(buff, buff_sz,
-               "echo '\n\nextern const font_lookup %s_%s[]; >> %s.h", pre, dir,
+               "echo $'\\n\\nextern const font_lookup %s_%s[];' >> %s.h", pre, dir,
                path);
       system(buff);
 

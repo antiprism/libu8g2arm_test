@@ -1,5 +1,5 @@
-libu8g2arm
-==========
+# libu8g2arm
+
 
 **WARNING: THIS IS A PROJECT PREVIEW FOR TESTING ONLY**
 
@@ -10,8 +10,8 @@ using the
 [u8g2-arm-linux](https://github.com/wuhanstudio/u8g2-arm-linux)
 port.
 
-Build and Install
------------------
+## Build and Install
+
 
 The package is built with the Autotools. Create the configure file
 by running
@@ -42,19 +42,82 @@ Make a *arm-unknown-linux-gnueabi* toolchain with
    make install-strip
 ```
 
-Using the library
----------------------------
+## Using the library
 
-To use the U8g2 library (contains permissive license fonts only)
-include `libu8g2arm/u8g2.h`, and link to `libu8g2arm` (licence:
-COPYING_permissive). To also use GPL and other copyleft fonts, additionally
-include `libu8g2arm/u8g2_fonts_gplcopyleft.h` and link to
-`libu8g2armfonts_gplcopyleft` (licence: COPYING_permissive and
-COPYING_gplcopyleft), and note that this library is covered by
-the GPL and not the LGPL. To also use noncommercial fonts, additionally
+A display can set up in the usual U8g2 way, with some minor differences. A
+C++ method is also provided for specifying the display at runtime.
+
+### Using C the usual way
+
+Include
+```
+#include <libu8g2arm/u8g2.h>
+#include <libu8g2arm/u8g2arm.h>
+```
+
+Follow the instructions for 
+[U8g2 C setup](https://github.com/olikraus/u8g2/wiki/u8g2setupc).
+
+The gpio callback is `u8x8_arm_linux_gpio_and_delay` and may be used with the
+following byte routines (not all tested)
+* `u8x8_byte_arm_linux_hw_i2c`
+* `u8x8_byte_sw_i2c`
+* `u8x8_byte_arm_linux_hw_spi`
+* `u8x8_byte_4wire_sw_spi`
+* `u8x8_byte_3wire_sw_spi`
+* `u8x8_byte_8bit_8080mode`
+
+When using hardware I2C or SPI routines, ensure that the corresponding linux
+device is enabled (e.g. `/boot/config.txt` contains `dtparam=i2c_arm=on` or
+`dtparam=spi=on`). In the program, after calling the display setup function,
+register the device parameters
+* Hardware I2C - u8g2arm_arm_init_hw_i2c(u8x8, bus_number)
+* Hardware SPI - u8g2arm_arm_init_hw_spi(u8x8, bus_number, cs_number)
+
+### Using C++ the usual way
+
+Include
+```
+#include <libu8g2arm/u8g2arm.h>
+#include <libu8g2arm/U8g2lib.h>
+```
+
+Follow the instructions for 
+[U8g2 C++ setup](https://github.com/olikraus/u8g2/wiki/u8g2setupcpp)
+
+Only the setup classes ending in `_F` are included in the library.
+
+When using hardware I2C or SPI routines, ensure that the corresponding linux
+device is enabled (e.g. `/boot/config.txt` contains `dtparam=i2c_arm=on` or
+`dtparam=spi=on`). In the program, after calling the display setup function,
+register the device parameters
+* Hardware I2C - u8g2arm_arm_init_hw_i2c(u8x8, bus_number)
+* Hardware SPI - u8g2arm_arm_init_hw_spi(u8x8, bus_number, cs_number)
+
+### Using C++ and specifying the display at runtime
+
+Include
+```
+#include <libu8g2arm/U8G2Controller.h>
+#include <libu8g2arm/U8g2lib.h>
+```
+
+See
+* example program [ex_init_runtime.cpp](examples/ex_init_runtime.cpp)
+* header documentation [U8g2Controller.h](src/include/U8g2Controller.h),
+  which includes a long list of controller and parameter settings at the end.
+
+### Linking and Fonts
+
+To link to the U8g2arm library, which contains contains only permissive license
+code and fonts fonts, link to `libu8g2arm` (licence: COPYING_permissive).
+
+To use GPL and other copyleft fonts, additionally include
+`libu8g2arm/u8g2_fonts_gplcopyleft.h` and link to `libu8g2armfonts_gplcopyleft`
+(additional licence: COPYING_gplcopyleft), and note that this library is
+covered by the GPL and not the LGPL. To use noncommercial fonts, additionally
 include `libu8g2arm/u8g2_fonts_noncommercial.h` and link to
-`libu8g2armfonts_noncommercial` (licence COPYING_permissive and
-COPYING_noncommercial).
+`libu8g2armfonts_noncommercial` (additional licence: COPYING_noncommercial).
 
 
 Package Regeneration

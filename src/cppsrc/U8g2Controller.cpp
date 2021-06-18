@@ -22,7 +22,7 @@
   IN THE SOFTWARE.
 */
 
-#include "U8G2Controller.h"
+#include "U8g2Controller.h"
 #include "../port/u8g2arm.h"
 
 #include <cstdio>

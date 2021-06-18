@@ -111,7 +111,41 @@ public:
   get_controllers();
 
   /// Set the controller
-  /**\param type controller type
+  /**
+   *    CONTROLLER SETUP DETAILS
+   *    PROTOCOL KEY
+   *    I2C                    - I2C (alias of HW_I2C), HW_I2C, SW_I2C
+   *    SPI (4 wire SPI)       - SPI (alias of 4W_HW_SPI), 4W_HW_SPI, 4W_SW_SPI
+   *    3W_SW_SPI (3 wire SPI) - 3W_SW_SPI
+   *    8080                   - 8080
+   *
+   *    CONTROLLER     MODEL               PROTOCOLS
+   *    ----------     -----               ---------
+   *    <<<CONTROLLER_LIST>>>
+   *
+   *    PROTOCOL OPTIONS
+   *
+   *    I2C is an alias for HW_I2C, SPI is an alias for 4W_HW_SPI
+   *    HW_I2C - hardware I2C
+   *      required:
+   *      optional: rotation,clock,data,reset,i2c_address,bus_number
+   *    SW_I2C - software I2C
+   *      required: clock,data
+   *      optional: rotation,reset,i2c_address
+   *    4W_HW_SPI - 4 wire hardware SPI
+   *      required: cs,dc
+   *      optional: rotation,reset,bus_number,cs_number
+   *    4W_SW_SPI - 4 wire software SPI
+   *      required: clock,data,cs,dc
+   *      optional: rotation,reset
+   *    3W_SW_SPI - 3 wire software SPI
+   *      required: clock,data,cs
+   *      optional: rotation,reset
+   *    8080 - 8080
+   *      required: clock,data,d0,d1,d2,d3,d4,d5,d6,d7,wr
+   *      optional: rotation,reset
+   *
+   * \param type controller type
    * \param model model name
    * \param com communication protocol
    * \param errmsg to return any error message
@@ -130,6 +164,25 @@ public:
 
   /// Set a setup value from a string
   /**\param setting a string in the form "value_type_name=value"
+   *    value_type_name   value
+   *    rotation          rotation degrees (0: 0, 1: 90, 2: 180, 3: 270)
+   *    clock             clock pin (GPIO number)
+   *    data              data pin (GPIO number)
+   *    cs                CS pin (GPIO number)
+   *    dc                DC pin (GPIO number)
+   *    reset             reset pin (GPIO number)
+   *    d0                D0 pin (GPIO number)
+   *    d1                D1 pin (GPIO number)
+   *    d2                D2 pin (GPIO number)
+   *    d3                D3 pin (GPIO number)
+   *    d4                D4 pin (GPIO number)
+   *    d5                D5 pin (GPIO number)
+   *    d6                D6 pin (GPIO number)
+   *    d7                D7 pin (GPIO number)
+   *    wr                WR pin (GPIO number)
+   *    i2c_address       I2C address (hex 01-fe)
+   *    bus_number        bus number
+   *    cs_number         CS number
    * \param errmsg to return any error message
    * \param separator the separator character
    * \return \c true is the value was set, otherwise \c false and \c errmsg
