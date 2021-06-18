@@ -136,11 +136,11 @@ To link to the U8g2arm library, which contains contains only permissive
 license code and fonts, link to `libu8g2arm` (licence: COPYING_permissive).
 
 To use GPL and other copyleft fonts, additionally include
-`libu8g2arm/u8g2_fonts_gplcopyleft.h` and link to `libu8g2armfonts_gplcopyleft`
+`libu8g2arm/u8g2_fonts_gplcopyleft.h` and link to `libu8g2fonts_gplcopyleft`
 (additional licence: COPYING_gplcopyleft), and note that this library is
 covered by the GPL and not the LGPL. To use noncommercial fonts, additionally
 include `libu8g2arm/u8g2_fonts_noncommercial.h` and link to
-`libu8g2armfonts_noncommercial` (additional licence: COPYING_noncommercial).
+`libu8g2fonts_noncommercial` (additional licence: COPYING_noncommercial).
 
 
 Package Regeneration
