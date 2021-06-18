@@ -91,8 +91,8 @@ When using hardware I2C or SPI routines, ensure that the corresponding linux
 device is enabled (e.g. `/boot/config.txt` contains `dtparam=i2c_arm=on` or
 `dtparam=spi=on`). In the program, after calling the display setup function,
 register the device parameters
-* Hardware I2C - u8g2arm_arm_init_hw_i2c(u8x8, bus_number)
-* Hardware SPI - u8g2arm_arm_init_hw_spi(u8x8, bus_number, cs_number)
+* hardware I2C must call `u8g2arm_arm_init_hw_i2c(u8x8, bus_number)`
+* hardware SPI must call `u8g2arm_arm_init_hw_spi(u8x8, bus_number, cs_number)`
 
 ### Using C++ and a fixed display
 
@@ -113,8 +113,8 @@ When using hardware I2C or SPI routines, ensure that the corresponding linux
 device is enabled (e.g. `/boot/config.txt` contains `dtparam=i2c_arm=on` or
 `dtparam=spi=on`). In the program, after calling the display setup function,
 register the device parameters
-* Hardware I2C - u8g2arm_arm_init_hw_i2c(u8x8, bus_number)
-* Hardware SPI - u8g2arm_arm_init_hw_spi(u8x8, bus_number, cs_number)
+* hardware I2C must call `u8g2arm_arm_init_hw_i2c(u8x8, bus_number)`
+* hardware SPI must call `u8g2arm_arm_init_hw_spi(u8x8, bus_number, cs_number)`
 
 ### Using C++ and a display specified at runtime
 

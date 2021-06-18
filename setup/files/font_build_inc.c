@@ -299,8 +299,17 @@ int main(void)
                path);
       system(buff);
 
+      if (i == 1 && j == 0) { // permissive and writing into u8x8.h
+        snprintf(buff, buff_sz,
+                 "echo '\\n\\ntypedef struct font_lookup {\n  const char "
+                 "*id;\n  const char *name;\n  const char *group;\n   const "
+                 "uint8_t *data;\n} font_lookup;\n'  >> %s.h",
+                 path);
+        system(buff);
+      }
+
       snprintf(buff, buff_sz,
-               "echo $'\\n\\nextern const font_lookup %s_%s[];' >> %s.h", pre, dir,
+               "echo '\\n\\nextern const font_lookup %s_%s[];' >> %s.h", pre, dir,
                path);
       system(buff);
 
@@ -309,7 +318,7 @@ int main(void)
       system(buff);
 
       snprintf(buff, buff_sz,
-               "echo '\n\nconst font_lookup %s_%s[] = {' >> %s.cpp", pre, dir,
+               "echo '\\n\\nconst font_lookup %s_%s[] = {' >> %s.cpp", pre, dir,
                path);
       system(buff);
 

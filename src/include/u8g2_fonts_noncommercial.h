@@ -14,6 +14,6 @@ extern const uint8_t u8g2_font_lucasarts_scumm_subtitle_o_tn[] U8G2_FONT_SECTION
 extern const uint8_t u8g2_font_lucasarts_scumm_subtitle_r_tf[] U8G2_FONT_SECTION("u8g2_font_lucasarts_scumm_subtitle_r_tf");
 extern const uint8_t u8g2_font_lucasarts_scumm_subtitle_r_tr[] U8G2_FONT_SECTION("u8g2_font_lucasarts_scumm_subtitle_r_tr");
 extern const uint8_t u8g2_font_lucasarts_scumm_subtitle_r_tn[] U8G2_FONT_SECTION("u8g2_font_lucasarts_scumm_subtitle_r_tn");
-$
+
 
 extern const font_lookup u8g2_fonts_noncommercial[];

@@ -1179,7 +1179,16 @@ extern const uint8_t u8x8_font_pcsenior_f[] U8X8_FONT_SECTION("u8x8_font_pcsenio
 extern const uint8_t u8x8_font_pcsenior_r[] U8X8_FONT_SECTION("u8x8_font_pcsenior_r");
 extern const uint8_t u8x8_font_pcsenior_n[] U8X8_FONT_SECTION("u8x8_font_pcsenior_n");
 extern const uint8_t u8x8_font_pcsenior_u[] U8X8_FONT_SECTION("u8x8_font_pcsenior_u");
-$
+
+
+typedef struct font_lookup {
+  const char *id;
+  const char *name;
+  const char *group;
+   const uint8_t *data;
+} font_lookup;
+
+
 
 extern const font_lookup u8x8_fonts_permissive[];
 
