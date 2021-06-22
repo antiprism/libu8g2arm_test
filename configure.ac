@@ -37,6 +37,7 @@ AC_CHECK_FUNCS([memset strncasecmp])
 
 AC_CONFIG_FILES([ Makefile
                   src/Makefile
+                  setup/examples/Makefile
                   ])
 
 AC_OUTPUT

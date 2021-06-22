@@ -1,5 +1,6 @@
 Makefile
 Makefile.in
+!setup/examples/Makefile.in
 aclocal.m4
 autom4te.cache
 build_aux
