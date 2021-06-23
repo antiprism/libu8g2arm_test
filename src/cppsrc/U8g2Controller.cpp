@@ -259,23 +259,23 @@ bool ControllerSetup::check_values(const string &com_name, string &errmsg)
     return false;
   }
 
-  // check for required values which have not been set
-  for (auto val_type : com_details->values_required) {
-    if (values[val_type] == U8X8_PIN_NONE) {
+  // check for values set which are not required or optional
+  for (int val_type = 0; val_type < VAL_LAST; val_type++) {
+    bool required = com_details->values_required.count(val_type);
+    bool optional = com_details->values_optional.count(val_type);
+    bool specified = (values[val_type] != U8X8_PIN_NONE);
+    if (required && !specified) {
       errmsg = value_details[val_type].id + " value has not been specified";
+      return false;
+    }
+    if (!(required || optional) && specified) {
+      errmsg =
+          value_details[val_type].id +
+          " value has been specified but is not compatible with this protocol";
       return false;
     }
   }
 
-  // check for values set which are not required (already checked) or optional
-  for (int val_type = 0; val_type < VAL_LAST; val_type++) {
-    if (values[val_type] != U8X8_PIN_NONE &&
-        com_details->values_optional.count(val_type) == 0) {
-      errmsg = value_details[val_type].id + " value has been specified but is "
-                                            "not compatible with this protocol";
-      return false;
-    }
-  }
   return true; // success
 }
 
