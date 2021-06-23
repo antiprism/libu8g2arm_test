@@ -104,14 +104,14 @@ static const ControllerSetup::ComDetails com_details[CS::COM_LAST] = {
         {CS::VAL_RESET, CS::VAL_ROTATION}                      // optional
     },
     {
-        "4W_HW_SPI",              // name
-        "4 wire hardware SPI",    // desc
-        {CS::VAL_CS, CS::VAL_DC}, // required
+        "4W_HW_SPI",           // name
+        "4 wire hardware SPI", // desc
+        {CS::VAL_DC},          // required
         {CS::VAL_BUS_NUMBER, CS::VAL_CS_NUMBER, CS::VAL_RESET,
          CS::VAL_ROTATION} // optional
     },
     {
-        "3W_SW_SPI",                               // desc
+        "3W_SW_SPI",                               // name
         "3 wire software SPI",                     // desc
         {CS::VAL_CLOCK, CS::VAL_DATA, CS::VAL_CS}, // required
         {CS::VAL_RESET, CS::VAL_ROTATION}          // optional

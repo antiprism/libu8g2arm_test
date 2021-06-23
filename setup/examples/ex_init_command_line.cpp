@@ -126,6 +126,7 @@ int main(int argc, char *argv[])
     fprintf(stderr, "error: controller: %s", errmsg.c_str());
     exit(1);
   }
+
   auto u8g2 = *p_u8g2;
 
   // U8g2 begin

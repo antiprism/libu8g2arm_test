@@ -110,7 +110,8 @@ void u8x8_SetPin_3Wire_SW_SPI(u8x8_t *u8x8, uint8_t clock, uint8_t data, uint8_t
 */
 void u8x8_SetPin_4Wire_HW_SPI(u8x8_t *u8x8, uint8_t cs, uint8_t dc, uint8_t reset)
 {
-  u8x8_SetPin(u8x8, U8X8_PIN_CS, cs);
+  // Note: CS GPIO pin is determined by the linux SPI device used
+  // u8x8_SetPin(u8x8, U8X8_PIN_CS, cs);
   u8x8_SetPin(u8x8, U8X8_PIN_DC, dc);
   u8x8_SetPin(u8x8, U8X8_PIN_RESET, reset);
 }
