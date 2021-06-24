@@ -1,6 +1,6 @@
 # Examples
 
-Build the example individually with, e.g. `make ex_init_class`
+Build the examples individually.
 
 ## ex_init_class
 Initialise a display U8g2-style using C++:
