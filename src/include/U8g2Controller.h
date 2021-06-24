@@ -225,6 +225,7 @@ public:
    *                   WS_96X64            I2C,SPI,3W_SW_SPI,8080
    *    
    *    SSD1329        128X96_NONAME       SPI,8080
+   *                   96X96_NONAME        SPI,8080
    *    
    *    SSD1606        172X72              SPI,3W_SW_SPI
    *    
@@ -310,6 +311,7 @@ public:
    *    UC1617         JLX128128           I2C,SPI,3W_SW_SPI
    *    
    *    UC1638         160X128             SPI,3W_SW_SPI,8080
+   *                   192X96              I2C,SPI,3W_SW_SPI,8080
    *    
    *    UC1701         EA_DOGS102          SPI,3W_SW_SPI,8080
    *                   MINI12864           SPI,3W_SW_SPI,8080
