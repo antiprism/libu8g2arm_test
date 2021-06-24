@@ -30,9 +30,9 @@ Examples
 
 See [Examples](examples/README.md).
 
-![ex_init_command_line SSD1306,128X64,I2C](examples/images/ex_init_command_line_01.jpg) ![ex_init_command_line SSD1306,128X64,I2C](examples/images/ex_init_command_line_02.jpg) ![ex_init_command_line SSD1306,128X64,I2C](examples/images/ex_init_command_line_03.jpg)
-
-![ex_init_command_line SSD1306,128X64,I2C](examples/images/ex_init_command_line_04.jpg) ![ex_init_command_line SDL](examples/images/ex_init_command_line_05.jpg) ![ex_init_command_line SSD1306,128X64,I2C](examples/images/ex_extra_fonts_01.jpg)
+![ex_init_command_line SSD1306,128X64,I2C](examples/images/ex_init_command_line_01.jpg) ![ex_init_command_line SSD1306,128X64,I2C](examples/images/ex_init_command_line_02.jpg)
+![ex_init_command_line SSD1306,128X64,I2C](examples/images/ex_init_command_line_03.jpg) ![ex_init_command_line SSD1306,128X64,I2C](examples/images/ex_init_command_line_04.jpg)
+![ex_init_command_line SDL](examples/images/ex_init_command_line_05.jpg) ![ex_init_command_line SSD1306,128X64,I2C](examples/images/ex_extra_fonts_01.jpg)
 
 
 Build and Install

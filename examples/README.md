@@ -83,4 +83,5 @@ Build the example individually with, e.g. `make ex_init_class`
   ```
   ./ex_init_command_line SDL,128X32
   ```
+  ![ex_init_command_line SDL,128X32](images/ex_init_command_line_06.jpg)
 

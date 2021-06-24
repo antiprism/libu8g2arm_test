@@ -22,4 +22,9 @@ stamp-h1
 *.libs
 *~
 *.swp
+examples/ex_init_c
+examples/ex_init_class
+examples/ex_init_runtime
+examples/ex_init_command_line
+examples/ex_init_extra_fonts
 src/setup
