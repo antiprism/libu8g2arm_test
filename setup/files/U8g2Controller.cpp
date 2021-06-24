@@ -442,8 +442,8 @@ bool ControllerSetup::set_controller(const string &type, const string &name,
 
   if (controller != nullptr) {
     auto *p = controller;
-    fprintf(stderr, "%s, %s, %s (%d, %d)\n", p->controller_type,
-            p->display_name, p->com_type, p->width, p->height);
+    //fprintf(stderr, "%s, %s, %s (%d, %d)\n", p->controller_type,
+    //        p->display_name, p->com_type, p->width, p->height);
   }
 
   return controller;
