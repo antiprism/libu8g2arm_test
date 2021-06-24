@@ -32,7 +32,7 @@ Build the example individually with, e.g. `make ex_init_class`
   ```
   LDLIBS=-l:libu8g2fonts_gplcopyleft.a make ex_extra_fonts
   ```
-  ![ex_extra_fonts](images/ex_extra_fonts.jpg)
+  ![ex_extra_fonts](images/ex_extra_fonts_01.jpg)
   
 * [ex_init_command_line](ex_init_command_line.cpp) initialise a display specified on the command line,
   and optionally include support for SDL.
@@ -46,7 +46,8 @@ Build the example individually with, e.g. `make ex_init_class`
   make ex_init_command_line
   ```
 
-  Some examples running this example with diferent displays
+  The following commands and images show the example program being run on
+  several displays.
   
   ```
   ./ex_init_command_line SSD1306,128X64,I2C
