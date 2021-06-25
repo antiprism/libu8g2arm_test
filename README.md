@@ -125,6 +125,11 @@ register the device parameters
 * hardware I2C must call `u8g2arm_arm_init_hw_i2c(u8x8, bus_number)`
 * hardware SPI must call `u8g2arm_arm_init_hw_spi(u8x8, bus_number, cs_number)`
 
+The U8g2 initialisation class constructors for hardware SPI include a
+CS argument. This argument is unused (the passed value is ignored), but
+has been retained for compatibility. The CS GPIO number is instead determined
+by the choice of SPI bus and CS numbers.
+
 ### Using C++ and a display specified at runtime
 
 Example program [ex_init_runtime.cpp](examples/ex_init_runtime.cpp).
@@ -150,6 +155,11 @@ covered by the GPL and not the LGPL. To use noncommercial fonts, additionally
 include `libu8g2arm/u8g2_fonts_noncommercial.h` and link to
 `libu8g2fonts_noncommercial` (additional licence: COPYING_noncommercial).
 
+### Notes
+
+The software I2C and SPI drivers may be unacceptably slow. I recommend
+connecting the device to work with a /dev/i2c-X or /dev/spidevX.Y linux
+device, and then use the hardware driver instead.
 
 Package Regeneration
 --------------------
